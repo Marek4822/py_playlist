@@ -124,9 +124,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# data = {
-# 'video_title': response['items'][i]['snippet']['title'],
-# 'video_id': response['items'][i]['contentDetails']['videoId']
-# }
-# data_list.append(data)

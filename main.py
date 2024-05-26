@@ -49,7 +49,7 @@ def get_urls(playlist_path):
     def extract_urls(filename):
         rm_extension = filename.rsplit('.', 1)[0]
         
-        match = re.search(r'-([-\w]+)$', rm_extension)
+        match = re.search(r'\[([-\w]+)\]$', rm_extension)
         if match:
             return match.group(1)
         else:
@@ -83,19 +83,19 @@ def compare_urls(video_id_list, video_urls):
         return(diff_urls)
 
 
-def save_diff_urls(diff_urls, download_dest):
+def save_diff_urls(diff_urls, playlists_path):
     urls_list = []
     for video_id in diff_urls:
         url = f"https://www.youtube.com/watch?v={video_id}" 
         urls_list.append(url)
 
-    with open(f'{download_dest}/diff_urls.txt', 'w') as f:
+    with open(f'{playlists_path}/diff_urls.txt', 'w') as f:
         for url in urls_list:
             f.write(url + '\n')
 
 
-def download(download_dest):
-    os.system(f'cd {download_dest} && youtube-dl --skip-unavailable-fragments --ignore-errors --continue -R 10 -f 140 -i -a diff_urls.txt')
+def download(playlists_path):
+    os.system(f'cd {playlists_path} && yt-dlp --skip-unavailable-fragments --ignore-errors --continue -R 10 -f 140 -i -a diff_urls.txt')
     
 
 def main():
@@ -124,3 +124,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# yt-dlp --skip-unavailable-fragments --ignore-errors --continue -R 10 -f 140 -i -a diff_urls.txt

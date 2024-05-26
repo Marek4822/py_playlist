@@ -99,7 +99,7 @@ def download(download_dest):
     
 
 def main():
-    playlists_path = f'/home/marek/python/py_playlist/{dir_name}'
+    playlists_path = f'{default_destination}{dir_name}'
     # playlists_id = 'PLpid-WNSSQAs01HGVMHSIu0molIRvsjGO'           # playlist id you want to download
     # playlists_path = '/home/marek/python/py_playlist/bangiers'    # place where u store files, destination where files will be saved
                                                                     # only files will be downloaded if there is a difference 

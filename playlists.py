@@ -1,4 +1,5 @@
 playlists_id = 'PLOgab_kIovBaP4V6oQMf5UNg2LSy1jTy4' # Enter playlist ID
+default_destination = '/home/marek/python/py_playlist/'
 dir_name = 'UmowaoDzielo' # Enter dir name where files will be downloaded  | Default destination /home/marek/python/py_playlist/ + dir_name
 
 

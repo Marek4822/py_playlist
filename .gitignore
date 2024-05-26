@@ -1,0 +1,9 @@
+# Ignore everything
+*
+
+!.gitignore
+!playlists.py
+!main.py
+!requirements.txt
+!README.md
+
